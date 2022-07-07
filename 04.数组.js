@@ -1,3 +1,4 @@
+// 基础知识
 const meArray = [1, 2, 3, [4, 5, 6], 7]
 const meArrayA = new Array(4) // 创建 4 个空元素的数组
 let meArrayLength = meArray.length // 长度

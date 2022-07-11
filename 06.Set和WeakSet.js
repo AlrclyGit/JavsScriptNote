@@ -20,8 +20,8 @@ mySetB.clear(); // 使用 clear() 删除所有元素
 const mySetC = new Set(["hdcms", "houdunren"]);
 [...mySetC]; // set 转 数组
 Array.from(mySetC); // set 转 数组
-hd = new Set([...new Set("123456789")].filter(item => item < 5)); // set 转 数组，然后调用数组的方法，最后数组 转 set
-dd = [...new Set("houdunren")].join(""); //  set 转 数组，然后调用数组的方法，最后数组 转 字符串
+let AAA = new Set([...new Set("123456789")].filter(item => item < 5)); // set 转 数组，然后调用数组的方法，最后数组 转 set
+let BBB = [...new Set("houdunren")].join(""); //  set 转 数组，然后调用数组的方法，最后数组 转 字符串
 
 // 迭代器
 // 使用 keys()/values()/entries() 都可以返回迭代对象，因为 set 类型只有值所以 keys 与 values 方法结果一致。

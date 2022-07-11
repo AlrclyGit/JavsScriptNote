@@ -22,8 +22,6 @@ meArray.copyWithin(NumberA, NumberB, NumberC) // 从数组 NumberB 的位置取 
 // 查找元素
 meArray.indexOf(MixedA, numberB) // 查找 MixedA 出现的位置，从 numberB 开始查找。找不到返回 -1，严格类型约束 A === B。
 meArray.lastIndexOf(MixedA, numberB) //  从后向前查找 MixedA 出现的位置，从 numberB 开始查找。找不到返回 -1，严格类型约束 A === B。
-meArray.includes(StringA) // 判断字符串是否包含 StringA，返回布尔。
-meArray.find(StringA)
 meArray.find(function (currentValue, index, arr) { }, this) // 返回通过测试（函数内判断）的数组的第一个元素的值。找不到返回 undefined
 meArray.findindex(function (currentValue, index, arr) { }, this) // 返回通过测试（函数内判断）的数组的第一个元素的索引值。找不到返回 -1
 // 数组排序

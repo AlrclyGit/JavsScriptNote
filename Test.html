@@ -1,0 +1,19 @@
+<body>
+    <button message="后盾人">button</button>
+    <button message="hdcms">button</button>
+</body>
+
+<script>
+    "use strict"
+
+    function show(title) {
+        alert(`${title + this.name}`);
+    }
+    let lisi = {
+        name: '李四'
+    };
+
+    let abc = function () {
+        show.call(lisi, 'call')
+    } 
+</script>

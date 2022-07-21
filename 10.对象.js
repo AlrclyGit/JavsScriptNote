@@ -108,33 +108,50 @@ const hd = {
 }
 const { nameCC, lessons: { title: titleA } } = hd;
 console.log(nameA, titleA);
-let { nameDD, urlDD, userDD = '向军大叔' } = { nameDD: '后盾人', urlDD: 'houdunren.com' };
+const { nameDD, urlDD, userDD = '向军大叔' } = { nameDD: '后盾人', urlDD: 'houdunren.com' };
 console.log(nameDD, userDD);
 
-
-
-
-
-
-class Star {
-    // 构造函数
-    constructor(uname) {
-        this.uname = uname
-    }
-    // 方法
-    sing() {
-        console.log('唱歌')
-    }
+/*
+ * 遍历对象
+ * 使用系统提供的 API 可以方便获取对象属性与值
+ */
+const objE = {}
+Object.keys(objE); // 获取对象里的 Key
+Object.values(objE); // 获取对象里的 Value
+Object.entries(objE); // 获取对象里的键值对
+// in 循环
+for (let key in objE) {
+    console.log(key, hd[key]);
+}
+// of 循环，不能操作对象，只能通过 keys、values、entries 间接实现
+for (const item of Object.values(objE)) {
+    console.log(item);
 }
 
-// 继承父类
-class ManStar extends Star() {
-    // 构造函数
-    constructor(uname) {
-        super(uname) // 调用父类的构造函数
-    }
-    sing() {
-        super.sing() // 可以调用父类的方法
-    }
-}
+/*
+ * 对象拷贝
+ * 对象赋值时复制的内存地址，所以一个对象的改变直接影响另一个
+ * 浅拷贝：对象本身和第一层是值传递，第二层还是复制的内存地址
+ * 深拷贝：整个都是新的
+ */
 
+// 使用 for/in 执行对象拷贝
+let oldObjA = { name: "俊介" };
+let newObjA = {};
+for (const key in oldObjA) {
+    newObjA[key] = oldObjA[key];
+}
+// Object.assign({}, oldObj)
+let oldObjB = { name: "俊介" };
+let newObjB = Object.assign({}, oldObjB)
+// { ...oldObj }
+let oldObjC = { name: "俊介" };
+let newObjC = { ...oldObjC };
+// 深拷贝，递归函数
+function copy(object) {
+    let obj = object instanceof Array ? [] : {};
+    for (const [k, v] of Object.entries(object)) {
+        obj[k] = typeof v == "object" ? copy(v) : v;
+    }
+    return obj;
+}
